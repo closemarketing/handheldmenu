@@ -1,0 +1,44 @@
+
+.handheld-navigation,
+.nav-menu,
+.main-navigation div.menu > ul:not(.nav-menu) {
+  overflow: hidden;
+  max-height: 0;
+  /* We have to use max-height because `height` isn't animatable */
+  -webkit-transition: all, ease, 0.8s;
+  transition: all, ease, 0.8s; }
+
+.handheld-navigation {
+  clear: both; }
+  .handheld-navigation ul {
+    margin: 0; }
+    .handheld-navigation ul.menu li {
+      position: relative; }
+      .handheld-navigation ul.menu li button::after {
+        -webkit-transition: all, ease, 0.9s;
+        transition: all, ease, 0.9s; }
+      .handheld-navigation ul.menu li button.toggled-on::after {
+        -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotate(180deg); }
+    .handheld-navigation ul.menu .sub-menu {
+      visibility: hidden;
+      opacity: 0;
+      max-height: 0;
+      -webkit-transition: all, ease, 0.9s;
+      transition: all, ease, 0.9s; }
+      .handheld-navigation ul.menu .sub-menu.toggled-on {
+        visibility: visible;
+        max-height: 9999px;
+        opacity: 1; }
+  .handheld-navigation .dropdown-toggle {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block; }
+
+.main-navigation.toggled .handheld-navigation,
+.main-navigation.toggled .menu > ul:not(.nav-menu),
+.main-navigation.toggled ul[aria-expanded=true] {
+  max-height: 9999px; }
