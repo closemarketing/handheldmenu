@@ -14,6 +14,8 @@
  * @package WordPress
  */
 
+define( 'HANDHELDMENU_VERSION', '0.1' );
+
 // * Loads translation
 load_plugin_textdomain( 'handheldmenu', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
